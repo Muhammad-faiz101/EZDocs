@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-slate-900 text-white hover:bg-slate-700;
+  }
+  .btn-secondary {
+    @apply border border-slate-300 bg-white text-slate-800 hover:bg-slate-50;
+  }
+  .input {
+    @apply h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15 focus:outline-none;
+  }
+  .field-label {
+    @apply block text-sm font-medium text-slate-700;
+  }
+  .text-link {
+    @apply text-teal-700 underline-offset-2 hover:underline;
+  }
+}
